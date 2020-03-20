@@ -7,6 +7,8 @@ import {dataLayer} from './components/atoms/map-style.js';
 import {updatePercentiles} from './utils/utils';
 import ControlPanel from './components/molecules/control-panel';
 
+import './App.css';
+
 
 const MAPBOX_TOKEN = process.env.REACT_APP_MAPBOX_ACCESS_TOKEN; // Set your mapbox token here
 
@@ -18,7 +20,7 @@ export default class App extends Component {
     viewport: {
       latitude: 40,
       longitude: -100,
-      zoom: 3,
+      zoom: 3.5,
       bearing: 0,
       pitch: 0
     }
@@ -29,6 +31,7 @@ export default class App extends Component {
       'https://raw.githubusercontent.com/uber/react-map-gl/master/examples/.data/us-income.geojson',
       (error, response) => {
         if (!error) {
+          console.log('requestJSON()', response);
           this._loadData(response);
         }
       }
@@ -83,14 +86,14 @@ export default class App extends Component {
 
   render() {
     const {viewport, data} = this.state;
-    console.log(data);
+    console.log('render()', data);
 
     return (
       <div style={{height: '100%', position: 'relative'}}>
         <MapGL
           {...viewport}
           width="100%"
-          height="600px"
+          height="100%"
           mapStyle="mapbox://styles/mapbox/light-v9"
           onViewportChange={this._onViewportChange}
           mapboxApiAccessToken={MAPBOX_TOKEN}
