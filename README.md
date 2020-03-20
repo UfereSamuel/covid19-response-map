@@ -1,3 +1,9 @@
+# COVID-19 Response Map
+
+This project maps responses to COVID-19 by federal, state, county, and city government.
+
+---
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
