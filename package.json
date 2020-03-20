@@ -7,13 +7,18 @@
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
     "acorn": "^7.1.1",
+    "d3-array": "^2.4.0",
+    "d3-request": "^1.0.6",
+    "d3-scale": "^3.2.1",
+    "env-cmd": "^10.1.0",
     "minimist": "^1.2.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-map-gl": "^5.2.3",
     "react-scripts": "3.4.0"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "env-cmd -f .env.local react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -32,5 +37,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "dotenv": "^8.2.0"
   }
 }
