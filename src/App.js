@@ -9,6 +9,8 @@ import Panel from './components/molecules/panel';
 import Legend from './components/molecules/legend';
 import { MapboxGLStyle } from './components/atoms/mapboxGLStyle'
 import { stateGeoJson } from './data/stateGeoJson'
+// import { stateGeoJson } from './data/usStates'
+// import { countyGeoJson } from './data/usCounties'
 
 import './App.css';
 
@@ -67,13 +69,14 @@ export default class App extends Component {
   };
 
   componentDidMount() {
+    // console.log(countyGeoJson)
       if (!!stateGeoJson) {
         // console.log('requestJSON()', response);
         this._loadData(stateGeoJson);
       }
     requestJson(
       // 'https://raw.githubusercontent.com/uber/react-map-gl/master/examples/.data/us-income.geojson',
-      // require('/data/stateGeoJson.json'),
+      // 'https://eric.clst.org/assets/wiki/uploads/Stuff/gz_2010_us_050_00_500k.json', // CORS issues
       (error, response) => {
         if (!error) {
           // console.log('requestJSON()', response);
