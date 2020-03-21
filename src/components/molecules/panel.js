@@ -1,11 +1,11 @@
 import React, {PureComponent} from 'react';
 
-export default class ControlPanel extends PureComponent {
+export default class Panel extends PureComponent {
   render() {
-    const {settings} = this.props;
+    const {settings, className} = this.props;
 
     return (
-      <div className="control-panel">
+      <div className={`control-panel ${className}`}>
         <h3>Interactive GeoJSON</h3>
         <p>
           Map showing median household income by state in year <b>{settings.year}</b>. Hover over a

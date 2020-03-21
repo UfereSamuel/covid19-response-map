@@ -19,3 +19,26 @@ export function updatePercentiles(featureCollection, accessor) {
     })
   };
 }
+
+const getRandomInt = (max) => {
+  return Math.floor(Math.random() * Math.floor(max));
+}
+
+export const addRandomStateChoro = (featureCollection, accessor) => {
+  const {features} = featureCollection;
+  // Generate a random number between 0 and 3
+  // const num = getRandomInt(4)
+  return {
+    type: 'FeatureCollection',
+    features: features.map(f => {
+      const value = accessor(f);
+      const properties = {
+        ...f.properties,
+        value,
+        percentile: getRandomInt(4),
+        hasActions: getRandomInt(2)
+      };
+      return {...f, properties};
+    })
+  };
+}
