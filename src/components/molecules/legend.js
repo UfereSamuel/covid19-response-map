@@ -2,7 +2,7 @@ import React, {PureComponent} from 'react';
 
 export default class Legend extends PureComponent {
   render() {
-    const {settings, className} = this.props;
+    const { className} = this.props;
 
     return (
       <div className={`control-panel ${className}`}>
